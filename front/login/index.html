@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sign In</title>
+        <script type="text/javascript">
+
+            function checkForm(form)
+            {
+              if(form.nickname.value == "") {
+                alert("Error:nickname cannot be blank!");
+                form.nickname.focus();
+                return false;
+              }
+              if(form.pwd.value == "") {
+                alert("Error:password cannot be blank!");
+                form.nickname.focus();
+                return false;
+              }
+            }
+          
+          </script>
+    </head>
+    <body>
+        <h1>Sign in</h1>
+        <div class="form">
+            <form action="http://localhost:8080/login" method="post" onsubmit="return checkForm(this);">
+                <div class="formItem">
+                    <label class="labelItem" for="nickname">Nickname: </label>
+                    <input class="inputItem" name="nickname"/>
+                </div>
+                <div class="formItem">
+                    <label class="labelItem" for="password">Password: </label>
+                    <input class="inputItem" type="password" name="password"/>
+                </div>
+                <div class="formItem">
+                    <input class ="button" type="submit" value="Submit"/>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
